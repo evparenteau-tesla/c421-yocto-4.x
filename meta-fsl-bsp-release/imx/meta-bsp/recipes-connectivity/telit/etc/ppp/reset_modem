@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# bash script to be called by rc.local that resets the Telit 3G modem
+#
+echo "Resetting Telit modem"
+echo -e -n "ATZ\r" > /dev/ttyACM0
+echo -e -n "ATE0\r" > /dev/ttyACM0

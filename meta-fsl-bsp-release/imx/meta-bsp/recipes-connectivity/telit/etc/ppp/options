@@ -1,0 +1,26 @@
+debug
+show-password
+ttyACM0
+115200
+lcp-echo-failure 3
+lcp-echo-interval 3
+nodetach
+connect "/usr/sbin/chat -v -t15 -f/etc/ppp/chatscripts/telit.chat"
+dump
+noauth
+user "george@winsystems.com"
+password "Win$ystem2014"
+defaultroute
+noipdefault
+ipcp-accept-local
+ipcp-accept-remote
+persist
+crtscts
+usepeerdns
+novj
+nobsdcomp
+novjccomp
+nopcomp
+noaccomp
+lock
+-ac

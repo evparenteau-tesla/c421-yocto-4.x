@@ -1,0 +1,24 @@
+From 6de8f1ec0c2e2bd67308ff0540f050470f718a32 Mon Sep 17 00:00:00 2001
+From: Paul DeMetrotion <pdemetrotion@winsystems.com>
+Date: Mon, 5 Dec 2016 14:44:11 -0600
+Subject: [PATCH] imx6solo-c421 Add c421 device tree to Makefile
+
+---
+ arch/arm/boot/dts/Makefile | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index d4f292a..a6a0a27 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -254,6 +254,7 @@ dtb-$(CONFIG_SOC_IMX53) += \
+ 	imx53-tx53-x13x.dtb \
+ 	imx53-voipac-bsb.dtb
+ dtb-$(CONFIG_SOC_IMX6Q) += \
++	imx6solo-c421.dtb \
+ 	imx6dl-aristainetos_4.dtb \
+ 	imx6dl-aristainetos_7.dtb \
+ 	imx6dl-cubox-i.dtb \
+-- 
+1.9.1
+

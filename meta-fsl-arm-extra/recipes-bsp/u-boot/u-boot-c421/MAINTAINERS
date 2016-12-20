@@ -1,0 +1,6 @@
+MX6SOLOC421 BOARD
+M:	Paul DeMetrotion <pdemetrotion@winsystems.com>
+S:	Maintained
+F:	board/freescale/mx6soloc421/
+F:	include/configs/mx6soloc421.h
+F:	configs/mx6soloc421_spinor_defconfig

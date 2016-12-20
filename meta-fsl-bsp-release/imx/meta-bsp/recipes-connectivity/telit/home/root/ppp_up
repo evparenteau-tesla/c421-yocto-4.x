@@ -1,0 +1,11 @@
+#!/bin/bash
+pppd &
+sleep 20
+echo -e -n "ATE0\r" > /dev/ttyACM3
+cat /dev/ttyACM3 &
+for (( ; ; ))
+do
+	echo -e -n "AT#MONI\r" > /dev/ttyACM3
+	sleep 5
+done
+exit 0

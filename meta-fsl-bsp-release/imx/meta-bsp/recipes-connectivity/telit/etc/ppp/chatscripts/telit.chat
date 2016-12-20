@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# Responses that cause an abort
+#
+ABORT "NO CARRIER"
+ABORT "NO DIALTONE"
+ABORT "NO DIAL TONE"
+ABORT "ERROR"
+ABORT "NO ANSWER"
+ABORT "BUSY"
+ABORT "VOICE"
+ABORT "DELAYED"
+REPORT CONNECT
+TIMEOUT 6
+#
+# enable result codes from modem
+#
+#'' 'ATQ0'
+#
+# soft reset
+#
+#"ATZ"
+#
+#
+#
+TIMEOUT 3 
+#
+# 
+'' 'ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0'
+#
+# connection to the network
+#
+'OK' AT+CGDCONT=1,"IP","neo.iot.net"
+#
+# dial the number
+#
+'OK' ATDT*99***1#
+#
+# wait for the following answer
+#
+TIMEOUT 30
+CONNECT

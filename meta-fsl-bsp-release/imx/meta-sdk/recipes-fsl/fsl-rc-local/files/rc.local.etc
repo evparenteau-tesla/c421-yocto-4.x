@@ -1,0 +1,90 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+echo 30000 >  /proc/sys/vm/min_free_kbytes
+
+# gpio0
+echo 3 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio3/direction
+
+# gpio1
+echo 4 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio4/direction
+
+# gpio2
+echo 5 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio5/direction
+
+# gpio3
+echo 6 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio6/direction
+
+# uart2_te
+echo 146 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio146/direction
+
+# uart2_rxen
+echo 158 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio158/direction
+
+# uart3_te
+echo 162 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio162/direction
+
+# uart3_rxen
+echo 160 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio160/direction
+
+# uart4_te
+echo 7 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio7/direction
+
+# uart4_rxen
+echo 159 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio159/direction
+
+# id0
+echo 8 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio8/direction
+
+# id1
+echo 9 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio9/direction
+
+# id2
+echo 203 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio203/direction
+
+# spi1_wp
+echo 168 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio168/direction
+
+# pmic_int_n
+echo 171 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio171/direction
+
+# usb_otg_oc
+echo 174 > /sys/class/gpio/export
+echo in > /sys/class/gpio/gpio174/direction
+
+# usb_hub_reset_n
+echo 85 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio85/direction
+
+# rgmii_reset_n
+echo 191 > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio191/direction
+
+/etc/ppp/reset_modem
+
+exit 0
