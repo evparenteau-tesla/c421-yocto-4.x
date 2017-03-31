@@ -75,7 +75,12 @@ int main(int argc, char *argv[])
     if (fd_uart < 0) {
         printf("uart cannot be opened (fd = %d)\n", fd_uart);
         exit(1);
-    }   
+    }
+
+    // get RS485 mode
+    if (ioctl(fd_uart, TIOCGRS485, &rs485conf) < 0) {
+        printf("rs485 config could not be read\n");
+    }
 
     // set RS485 mode
     rs485conf.flags |= SER_RS485_ENABLED;
